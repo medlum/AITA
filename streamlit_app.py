@@ -73,18 +73,18 @@ if st.session_state.initial_msg == 0:
 
 for index, msg in enumerate(chat_msg.messages):
 
-    # bot's message is in even position as welcome message is added at initial
+    # bot's message is in odd position as welcome message is added at initial
     if index % 2 == 0:
 
         message(msg.content.replace('<|eot_id|>', '').replace("assistant", "").replace('Human:', ''),
                 is_user=False,
                 key=f"bot{index}",
-                avatar_style="big-ears",
-                seed="Salem",
+                avatar_style="miniavs",
+                seed="Trouble",
                 allow_html=True,
                 is_table=True,)
 
-    # user's message is in odd position
+    # user's message is in even position
     else:
         edited_msg = msg.content
         edited_msg.replace('<|eot_id|>', '')
@@ -145,8 +145,8 @@ if prompt := st.chat_input("Ask me a question..."):
             message(edited_response,
                     is_user=False,
                     key=f"bot_2",
-                    avatar_style="big-ears",
-                    seed="Salem",
+                    avatar_style="miniavs",
+                    seed="Trouble",
                     allow_html=True,
                     is_table=True,)
 
