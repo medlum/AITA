@@ -84,6 +84,22 @@ for index, msg in enumerate(chat_msg.messages):
                 allow_html=True,
                 is_table=True,)
 
+        # -----clear history -----#
+        # add a clear_btn
+        clear_btn = sac.buttons([sac.ButtonsItem(icon=sac.BsIcon(name='x-circle', size=20))],
+                                align='left',
+                                variant='link',
+                                index=None,
+                                label=" ",
+                                key=f"clear_msg{index}"
+                                )
+
+        # - clear chat_msg
+        # - set initial_msg to 1 to stop welcome message
+        if clear_btn is not None:
+            chat_msg.messages.pop(-1)
+            # chat_msg.clear()
+
     # user's message is in even position
     else:
         edited_msg = msg.content
@@ -96,22 +112,6 @@ for index, msg in enumerate(chat_msg.messages):
         # message(msg.content.replace('<|eot_id|>', ''),
         #        is_user=True, key=f"user{index}",
         #        avatar_style="big-ears", seed="Angel")
-
-    # -----clear history -----#
-    # add a clear_btn
-    clear_btn = sac.buttons([sac.ButtonsItem(icon=sac.BsIcon(name='x-circle', size=20))],
-                            align='left',
-                            variant='link',
-                            index=None,
-                            label=" ",
-                            key=f"clear_msg{index}"
-                            )
-
-    # - clear chat_msg
-    # - set initial_msg to 1 to stop welcome message
-    if clear_btn is not None:
-        chat_msg.messages.pop(-1)
-        # chat_msg.clear()
 
     # set initial_msg to 0 in first loop
     if index == 0:
