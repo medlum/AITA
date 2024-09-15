@@ -9,7 +9,7 @@ from langchain.schema import (
 )
 
 msg_template = "I'm AITA, ask me anything about <i>AI Applications</i>, or choose these options:"
-msg_options = "\n1. Assessments\n2. Attendance\n3. Duration\n4. Course overview\n5. Lecturer's details\n6. Learning materials\n7. Location\n8. Study mode\n9. Todos on first week\n10. Try a quiz\n11. Questions on AI or Python"
+msg_options = "\n1. Type of assessments\n2. Attendance requirements\n3. Course duration\n4. Course overview\n5. Lecturer's details\n6. Learning materials\n7. Learning mode\n8. Location\n9. Todos on first week\n10. Try a quiz\n11. Questions on AI or Python"
 
 
 # \n1. Assessments
@@ -38,8 +38,8 @@ chatPrompt = ChatPromptTemplate.from_messages(
         Here are the course details:
         
         Course Duration
-        - Start and end date will be 15 April to 15 June 2025
-        - Start and end time for each lesson is 9am -5pm
+        - 15 April to 15 June 2025
+        - 9am -5pm during in-person learning and online synchronous learning
 
         Lecturer's Detail
         - Name: Andy Oh
@@ -82,12 +82,13 @@ chatPrompt = ChatPromptTemplate.from_messages(
         - Important: Please complete all these tasks independently before the next lesson. 
         - If you have any questions or need assistance, don't hesitate to reach out!
 
-        Assessment Components
+        Type of Assessments  
          The breakdown of assessment is as as follow:
         - 2 individual workshop exercises is worth 5% each
-        - 2 individiual assignments is worth 20% each
+        - 2 individual assignments is worth 20% each
         - 1 capstone group project is worth 30%
         - Class participation is worth 20%
+
 
         Attendance
         - QR code will be shown to students in the morning and afternoon to take attendance.
