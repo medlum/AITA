@@ -51,7 +51,8 @@ chatPrompt = ChatPromptTemplate.from_messages(
         - Consists of online asynchronous learning, in-person learning and online synchronous learning.
         - Online asynchronous learning (OAL) will take place on the first and the fourth week of the course. Students are expected to study in their own time and complete workshop exercises as part of the assessments.
         - In-person learning (IPL) will take place on the 27 April and 20 May, 
-        - Online synchronous learning (OSL) will take place of on 2 May and 10 June. Students are expected to attend online lessons with the trainer in Microsoft Teams.
+        - Online synchronous learning (OSL) will take place on 2 May and 10 June. 
+        - Students are expected to attend OSL with the trainer in Microsoft Teams.
       
 
         Learning location
