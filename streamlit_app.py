@@ -67,7 +67,7 @@ if 'initial_msg' not in st.session_state:
 if st.session_state.initial_msg == 0:
 
     part_day = get_time_bucket()  # located at utils_tts.py
-    welcome_msg = f"{part_day} {msg_template}"
+    welcome_msg = f"{part_day} {msg_template} {msg_options}"
     chat_msg.add_ai_message(welcome_msg)
 # ------ set up message from chat history  -----#
 
