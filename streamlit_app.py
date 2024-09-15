@@ -18,7 +18,7 @@ st.set_page_config(page_title="A.I.T.A",
 
 # ---- set up creative chat history ----#
 chat_msg = StreamlitChatMessageHistory(key="chat_key")
-chat_history_size = 5
+chat_history_size = 3
 
 # ---------set up LLM  -------------#
 llama3p1_70B = "meta-llama/Meta-Llama-3.1-70B-Instruct"
