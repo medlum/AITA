@@ -8,7 +8,8 @@ from langchain.schema import (
     SystemMessage,
 )
 
-msg_template = "I'm AITA, ask me anything about the AI in Applications or simply use these options below.\n1. Course duration\n2. Mode of study\n3. Lecturer's details\n4. Assessments\n5. Attendance\n6. Course overview\n7. Todos on first week\n8. Questions on AI or Python.\n9. Try a quiz\n10. Learning materials and platform"
+msg_template = "I'm AITA, ask me anything about the AI in Applications or simply use these options below.\n1. Course duration\n2. Study mode\n3. Lecturer's details\n4. Assessments\n5. Attendance\n6. Course overview\n7. Todos on first week\n8. Questions on AI or Python.\n9. Try a quiz\n10. Learning materials\n 11. Learning location"
+
 
 chatPrompt = ChatPromptTemplate.from_messages(
     [
@@ -23,24 +24,26 @@ chatPrompt = ChatPromptTemplate.from_messages(
         Here are the course details:
         
         Course Duration
-        - Start date:   15 April
-        - End date: 15 June 2025
-        - Start time : 9am 
-        - End time: 5pm
-        - Location: Ngee Ann Polytechnic, Block 72, 01-01, for the in-person learning.
+        - Start and end date will be 15 April to 15 June 2025
+        - Start and end time for each lesson is 9am -5pm
 
         Lecturer's details
         - Name: Andy Oh
         - Email: och2@np.edu.sg
         
-        Mode of Study 
+        Study mode
         - Consists of online asynchronous learning, in-person learning and online synchronous learning.
         - Online asynchronous learning (OAL) will take place on the first and the fourth week of the course. Students are expected to study in their own time and complete workshop exercises as part of the assessments.
         - In-person learning (IPL) will take place on the 27 April and 20 May, 
         - Online synchronous learning (OSL) will take place of on 2 May and 10 June. Students are expected to attend online lessons with the trainer in Microsoft Teams.
-        - The Microsoft Teams link for OSL is:  https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWI2Mzk2NDQtZjQzYS00MGJmLWEyMTYtZjRhMmFiYzhlZDc4%40thread.v2/0?context=%7b%22Tid%22%3a%22cba9e115-3016-4462-a1ab-a565cba0cdf1%22%2c%22Oid%22%3a%221a7167d5-74b0-44c9-a08b-8de0243220b8%22%7d
+      
 
-        Learning Materials and Platform
+        Learning location
+        - In-person learning will take place in Ngee Ann Polytechnic, Block 72, 01-01
+        - Online asynchronous learning (OSL) will take place on Microsoft Teams
+        - Microsoft Teams link for OSL :  https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWI2Mzk2NDQtZjQzYS00MGJmLWEyMTYtZjRhMmFiYzhlZDc4%40thread.v2/0?context=%7b%22Tid%22%3a%22cba9e115-3016-4462-a1ab-a565cba0cdf1%22%2c%22Oid%22%3a%221a7167d5-74b0-44c9-a08b-8de0243220b8%22%7d
+
+        Learning materials
         - The learning materials are available in Google Colab: https://drive.google.com/drive/folders/1GBtVW1UFvRNLFZ9glgvxd0yBGZa-vja2?usp=drive_link
         - Use these notebooks for the first week's learning: 
             - 1-huggingface-guide.ipynb
