@@ -8,7 +8,21 @@ from langchain.schema import (
     SystemMessage,
 )
 
-msg_template = "I'm AITA, ask me anything about the AI in Applications or simply use these options below.\n1. Course duration\n2. Study mode\n3. Lecturer's details\n4. Assessments\n5. Attendance\n6. Course overview\n7. Todos on first week\n8. Questions on AI or Python.\n9. Try a quiz\n10. Learning materials\n 11. Learning location"
+msg_template = "I'm AITA, ask me anything about the course on 'AI in Applications' or simply use these options below."
+msg_options = "\n1. Assessments\n2. Attendance\n3. Duration\n4. Course overview\n5. Lecturer's details\n6. Learning materials\n7. Location\n8. Study mode\n9. Todos on first week\n10. Try a quiz\n11. Questions on AI or Python"
+
+
+# \n1. Assessments
+# \n2. Attendance
+# \n3. Duration
+# \n4. Course overview
+# \n5. Lecturer's details
+# \n6. Learning materials
+# \n7. Location
+# \n8. Study mode
+# \n9. Todos on first week
+# \n10. Try a quiz
+# \n11. Questions on AI or Python
 
 
 chatPrompt = ChatPromptTemplate.from_messages(
@@ -27,10 +41,10 @@ chatPrompt = ChatPromptTemplate.from_messages(
         - Start and end date will be 15 April to 15 June 2025
         - Start and end time for each lesson is 9am -5pm
 
-        Lecturer's details
+        Lecturer's name os 
         - Name: Andy Oh
         - Email: och2@np.edu.sg
-        
+        - Availability : 9am - 5pm, Monday to Friday
         Study mode
         - Consists of online asynchronous learning, in-person learning and online synchronous learning.
         - Online asynchronous learning (OAL) will take place on the first and the fourth week of the course. Students are expected to study in their own time and complete workshop exercises as part of the assessments.
@@ -41,11 +55,11 @@ chatPrompt = ChatPromptTemplate.from_messages(
         Learning location
         - In-person learning will take place in Ngee Ann Polytechnic, Block 72, 01-01
         - Online asynchronous learning (OSL) will take place on Microsoft Teams
-        - Microsoft Teams link for OSL :  https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWI2Mzk2NDQtZjQzYS00MGJmLWEyMTYtZjRhMmFiYzhlZDc4%40thread.v2/0?context=%7b%22Tid%22%3a%22cba9e115-3016-4462-a1ab-a565cba0cdf1%22%2c%22Oid%22%3a%221a7167d5-74b0-44c9-a08b-8de0243220b8%22%7d
+        - Microsoft Teams link for OSL  https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWI2Mzk2NDQtZjQzYS00MGJmLWEyMTYtZjRhMmFiYzhlZDc4%40thread.v2/0?context=%7b%22Tid%22%3a%22cba9e115-3016-4462-a1ab-a565cba0cdf1%22%2c%22Oid%22%3a%221a7167d5-74b0-44c9-a08b-8de0243220b8%22%7d
 
         Learning materials
         - The learning materials are available in Google Colab: https://drive.google.com/drive/folders/1GBtVW1UFvRNLFZ9glgvxd0yBGZa-vja2?usp=drive_link
-        - Use these notebooks for the first week's learning: 
+        - Use these notebooks for the first week's learning
             - 1-huggingface-guide.ipynb
             - 2-Introduction-NLP.ipynb
             - 3-workshop-exercises-part-1.ipynb 
@@ -76,13 +90,6 @@ chatPrompt = ChatPromptTemplate.from_messages(
         - QR code will be shown to students in the morning and afternoon to take attendance.
         - Students are expected to fulfill 80% of the attendance.
         - For valid absences, students will submit an official excuse letter to CETA and keep the trainer informed.
-        
-        Learning Objectives
-        - Understand the Fundamentals: By the end of this module, students will be able to explain the basic concepts of Artificial Intelligence (AI) and its applications in various industries.
-        - Identify AI-powered Solutions: Students will learn to recognize and analyze real-world examples of AI-powered solutions, including their strengths, weaknesses, and potential impact on society.
-        - Develop Critical Thinking Skills: Through case studies and discussions, students will develop critical thinking skills to evaluate the benefits and limitations of AI-driven systems and make informed decisions about their adoption.
-        - Explore Emerging Trends: This module will introduce students to emerging trends and innovations in AI research, enabling them to stay up-to-date with the rapidly evolving field and anticipate future developments.
-        - Apply AI Concepts to Real-World Problems: By working on projects or assignments, students will apply theoretical knowledge of AI to solve practical problems, fostering creativity, innovation, and problem-solving skills.
 
         Course overview
         - This course requires basic knowledge in Python programming.
