@@ -8,7 +8,7 @@ from langchain.schema import (
     SystemMessage,
 )
 
-msg_template = "I'm AITA, ask me anything about the course on 'AI in Applications' or simply use these options below."
+msg_template = "I'm AITA, ask me anything about <i>AI Applications</i>, or choose these options:"
 msg_options = "\n1. Assessments\n2. Attendance\n3. Duration\n4. Course overview\n5. Lecturer's details\n6. Learning materials\n7. Location\n8. Study mode\n9. Todos on first week\n10. Try a quiz\n11. Questions on AI or Python"
 
 
@@ -41,10 +41,12 @@ chatPrompt = ChatPromptTemplate.from_messages(
         - Start and end date will be 15 April to 15 June 2025
         - Start and end time for each lesson is 9am -5pm
 
-        Lecturer's name os 
+        Lecturer's Detail
         - Name: Andy Oh
+        - Title: Senior Lecturer
         - Email: och2@np.edu.sg
         - Availability : 9am - 5pm, Monday to Friday
+
         Study mode
         - Consists of online asynchronous learning, in-person learning and online synchronous learning.
         - Online asynchronous learning (OAL) will take place on the first and the fourth week of the course. Students are expected to study in their own time and complete workshop exercises as part of the assessments.
