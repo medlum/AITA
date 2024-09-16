@@ -34,6 +34,8 @@ chatPrompt = ChatPromptTemplate.from_messages(
         
         You can assist in providing course information, explain concepts of artificial intelligence, programming and create quiz to test students.
 
+        Always provide the course information as strings, not as json, dict or list.
+
         If you do not know the answer, say you don't know.
         
         Here are the course details:
