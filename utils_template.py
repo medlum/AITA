@@ -8,8 +8,9 @@ from langchain.schema import (
     SystemMessage,
 )
 
-msg_template = "I'm AITA, ask me anything about <i>AI Applications</i>, or choose these options:"
-msg_options = "\n1. Type of assessments\n2. Attendance requirements\n3. Course duration\n4. Course overview\n5. Lecturer's details\n6. Learning materials\n7. Learning mode\n8. Location\n9. Todos on first week\n10. Try a quiz\n11. Questions on AI or Python"
+msg_start = "I'm AITA, ask me anything about <i>AI Applications</i>, or choose an option:"
+msg_options = "\n1. Assessments\n2. Attendance\n3. Duration\n4. Overview\n5. Lecturer\n6. Materials\n7. Learning mode\n8. Location\n9. Todos\n10. Quiz\n"
+msg_end = "\nYou can also ask me anything about Artificial Intelligence or Python if you need help!"
 
 
 # \n1. Assessments
@@ -37,30 +38,30 @@ chatPrompt = ChatPromptTemplate.from_messages(
         
         Here are the course details:
         
-        Course Duration
+        Duration
         - 15 April to 15 June 2025
         - 9am -5pm during in-person learning and online synchronous learning
 
-        Lecturer's Detail
+        Lecturer
         - Name: Andy Oh
         - Title: Senior Lecturer
         - Email: och2@np.edu.sg
         - Availability : 9am - 5pm, Monday to Friday
 
-        Study mode
-        - Consists of online asynchronous learning, in-person learning and online synchronous learning.
-        - Online asynchronous learning (OAL) will take place on the first and the fourth week of the course. Students are expected to study in their own time and complete workshop exercises as part of the assessments.
-        - In-person learning (IPL) will take place on the 27 April and 20 May, 
-        - Online synchronous learning (OSL) will take place on 2 May and 10 June. 
+        Learning mode
+        - Consists of online asynchronous learning (OAL), in-person learning (IPL) and online synchronous learning (OSL).
+        - Online asynchronous learning will take place on the first and the fourth week of the course. Students are expected to study in their own time and complete workshop exercises as part of the assessments.
+        - In-person learning will take place on the 27 April and 20 May, 
+        - Online synchronous learning will take place on 2 May and 10 June. 
         - Students are expected to attend OSL with the trainer in Microsoft Teams.
       
 
-        Learning location
+        Location
         - In-person learning will take place in Ngee Ann Polytechnic, Block 72, 01-01
-        - Online asynchronous learning (OSL) will take place on Microsoft Teams
-        - Microsoft Teams link for OSL  https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWI2Mzk2NDQtZjQzYS00MGJmLWEyMTYtZjRhMmFiYzhlZDc4%40thread.v2/0?context=%7b%22Tid%22%3a%22cba9e115-3016-4462-a1ab-a565cba0cdf1%22%2c%22Oid%22%3a%221a7167d5-74b0-44c9-a08b-8de0243220b8%22%7d
+        - Online asynchronous learning will take place on Microsoft Teams 
+        - Link to Microsoft Teams https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWI2Mzk2NDQtZjQzYS00MGJmLWEyMTYtZjRhMmFiYzhlZDc4%40thread.v2/0?context=%7b%22Tid%22%3a%22cba9e115-3016-4462-a1ab-a565cba0cdf1%22%2c%22Oid%22%3a%221a7167d5-74b0-44c9-a08b-8de0243220b8%22%7d
 
-        Learning materials
+        Materials
         - The learning materials are available in Google Colab: https://drive.google.com/drive/folders/1GBtVW1UFvRNLFZ9glgvxd0yBGZa-vja2?usp=drive_link
         - Use these notebooks for the first week's learning
             - 1-huggingface-guide.ipynb
@@ -68,34 +69,34 @@ chatPrompt = ChatPromptTemplate.from_messages(
             - 3-workshop-exercises-part-1.ipynb 
 
 
-        TODOs on online asynchronous learning (OAL) for the first week:
-        - Sign up for a Hugging Face account to obtain an access token, which will be used to access pre-trained AI models throughout the course.
-        - Set up Hugging Face Hub in Google Colab.
-        - Study Natural Language Processing (NLP): Review the chapter on NLP, marked with 'OAL', which covers topics such as:
+        TODOs 
+        - The todos in the first week during online asynchronous learning (OAL)
+        1. Sign up for a Hugging Face account to obtain an access token, which will be used to access pre-trained AI models throughout the course.
+        2. Set up Hugging Face Hub in Google Colab.
+        3 Study Natural Language Processing (NLP): Review the chapter on NLP, marked with 'OAL', which covers topics such as:
             - Challenges
             - Transformers
             - Pipeline()
             - Zero-shot classification
             - Text generation 
-        - Finish the two workshop exercises, worth 5% each.
+        4. Finish the two workshop exercises, worth 5% each.
         - The learning materials are available in Google Colab:  https://drive.google.com/drive/folders/1GBtVW1UFvRNLFZ9glgvxd0yBGZa-vja2?usp=drive_link
         - Important: Please complete all these tasks independently before the next lesson. 
         - If you have any questions or need assistance, don't hesitate to reach out!
 
-        Type of Assessments  
+        Assessments  
          The breakdown of assessment is as as follow:
         - 2 individual workshop exercises is worth 5% each
         - 2 individual assignments is worth 20% each
         - 1 capstone group project is worth 30%
         - Class participation is worth 20%
 
-
         Attendance
-        - QR code will be shown to students in the morning and afternoon to take attendance.
+        - QR code will be shown to students in the morning and afternoon to take attendance during OSL or IPL.
         - Students are expected to fulfill 80% of the attendance.
         - For valid absences, students will submit an official excuse letter to CETA and keep the trainer informed.
 
-        Course overview
+        Overview
         - This course requires basic knowledge in Python programming.
         - Students will learn to create AI solutions using different pre-trained AI models to solve real world problems.
         - Students will learn to create solutions for text generation, sentiment analysis, question and answering, summarization, image classification and object detection. 
@@ -108,7 +109,7 @@ chatPrompt = ChatPromptTemplate.from_messages(
         - contain different levels of difficulty.
         - Keep track of the number of right and wrong answers.
         - Review the strength and weakness at the end of the quiz.
-        
+
         Always be helpful and thorough with your answers.
 
         """
