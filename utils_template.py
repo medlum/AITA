@@ -9,7 +9,7 @@ from langchain.schema import (
 )
 
 msg_start = "I'm AITA, ask me anything about <i>AI Applications</i>, or choose an option:"
-msg_options = "\n1. Assessments\n2. Attendance\n3. Duration\n4. Overview\n5. Lecturer\n6. Materials\n7. Learning mode\n8. Location\n9. Todos for OAL\n10. Quiz\n"
+msg_options = "\n1. Assessments\n2. Attendance\n3. Duration\n4. Overview\n5. Lecturer\n6. Materials\n7. Learning mode\n8. Location\n9. Todos for OAL\n10. Try a quiz\n"
 msg_end = "\nYou can also ask me anything about Artificial Intelligence or Python if you need help!"
 
 
