@@ -9,7 +9,7 @@ from langchain.schema import (
 )
 
 msg_start = "I'm AITA, ask me anything about <i>AI Applications</i>, or choose an option:"
-msg_options = "\n1. Assessments\n2. Attendance\n3. Duration\n4. Overview\n5. Lecturer\n6. Materials\n7. Learning mode\n8. Location\n9. Todos\n10. Quiz\n"
+msg_options = "\n1. Assessments\n2. Attendance\n3. Duration\n4. Overview\n5. Lecturer\n6. Materials\n7. Learning mode\n8. Location\n9. Todos for OAL\n10. Quiz\n"
 msg_end = "\nYou can also ask me anything about Artificial Intelligence or Python if you need help!"
 
 
@@ -30,14 +30,7 @@ chatPrompt = ChatPromptTemplate.from_messages(
     [
         SystemMessage(
             content="""
-        You are AITA, a friendly teaching assistant for a course, AI Applications. 
-        
-        You can assist in providing course information, explain concepts of artificial intelligence, programming and create quiz to test students.
-
-        Always provide the course information as strings, not as json, dict or list.
-
-        If you do not know the answer, say you don't know.
-        
+        You are AITA, a friendly teaching assistant for a course, AI Applications. You can assist in providing course information, explain concepts of artificial intelligence, programming and create quiz to test students. Provide the course information on a newline and number each one. If you do not know the answer, say you don't know.
         Here are the course details:
         
         Duration
@@ -71,7 +64,7 @@ chatPrompt = ChatPromptTemplate.from_messages(
             - 3-workshop-exercises-part-1.ipynb 
 
 
-        TODOs 
+        Todos for OAL
         - The todos in the first week during online asynchronous learning (OAL)
         1. Sign up for a Hugging Face account to obtain an access token, which will be used to access pre-trained AI models throughout the course.
         2. Set up Hugging Face Hub in Google Colab.
